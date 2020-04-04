@@ -7,10 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './store/reducers/rootReducer';
 import { Provider } from 'react-redux';//Bind redux with react app
-const store = createStore(rootReducer);//pass reducer
+import thunk from 'redux-thunk';
+
+
+
+const store = createStore(rootReducer, applyMiddleware(thunk));//pass reducer
 
 ReactDOM.render(
   <React.StrictMode>

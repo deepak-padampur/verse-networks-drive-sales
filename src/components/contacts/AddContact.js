@@ -1,5 +1,8 @@
 //Add the contacts of persons
 import React, { Component } from 'react';
+
+import { connect } from 'react-redux';
+import { createContact } from '../../store/actions/contactActions';
 import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap';
 
 
@@ -22,7 +25,8 @@ class AddPerson extends Component {
     handleSubmit = (e) => {
 
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
+        this.props.createContact(this.state);
 
 
     }
@@ -91,6 +95,12 @@ class AddPerson extends Component {
     }
 }
 
-export default AddPerson
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createContact: (contact) => dispatch(createContact(contact))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(AddPerson)
 
 
