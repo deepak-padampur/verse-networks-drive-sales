@@ -13,11 +13,16 @@ const contactReducer = (state = initState, action) => {
     switch (action.type) {
         case 'ADD_CONTACT':
             console.log('Person added successfully', action.contact);
+            return state;
+        case 'ADD_CONTACT_ERROR':
+            console.log('add person err', action.err);
+            return state;
         default:
-            console.log('Default');
+            return state;
+
+
 
     }
-    return state
 
 }
 

@@ -5,14 +5,14 @@ import 'firebase/auth';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCn2Qrirfk2SEOfilJyEzwQ4LqayHFKkdk",
-    authDomain: "drive-sales-verse-network.firebaseapp.com",
-    databaseURL: "https://drive-sales-verse-network.firebaseio.com",
-    projectId: "drive-sales-verse-network",
-    storageBucket: "drive-sales-verse-network.appspot.com",
-    messagingSenderId: "381978676998",
-    appId: "1:381978676998:web:4d9b8f8fc1ebf30b15d887",
-    measurementId: "G-SGNS4RSFRR"
+    apiKey: "AIzaSyAEgj55mVr-iC_8echVUHgxPtRe5kEvL7Q",
+    authDomain: "drive-sales-verse-networ-5b1ee.firebaseapp.com",
+    databaseURL: "https://drive-sales-verse-networ-5b1ee.firebaseio.com",
+    projectId: "drive-sales-verse-networ-5b1ee",
+    storageBucket: "drive-sales-verse-networ-5b1ee.appspot.com",
+    messagingSenderId: "125270499169",
+    appId: "1:125270499169:web:7e97d823ddd56eed76ef20",
+    measurementId: "G-J4SS4SP5ZZ"
 };
 firebase.initializeApp(firebaseConfig);
 

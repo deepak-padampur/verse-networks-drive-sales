@@ -67,7 +67,7 @@ class AddPerson extends Component {
 
                                         <Form.Group as={Col} controlId="label">
                                             <Form.Label>Label</Form.Label>
-                                            <Form.Control as="select" value="Choose..." onChange={this.handleChange}>
+                                            <Form.Control as="select" value="Customer" onChange={this.handleChange}>
                                                 <option>Customer</option>
                                                 <option>Hot Deal</option>
                                             </Form.Control>
