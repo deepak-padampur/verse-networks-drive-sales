@@ -1,30 +1,25 @@
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Nav, NavItem, Container, Row, Col, Button } from 'reactstrap';
+import { Nav } from 'react-bootstrap'
 
+//output links
 const SignedOutLinks = () => {
     return (
-        <Nav>
-            <Container fluid>
-                <Row>
-                    <Col md={6}>
-                        <NavItem>
-                            <NavLink to='/'><Button>Signup</Button></NavLink>
-                        </NavItem>
-                    </Col>
-                    <Col md={6}>
-                        <NavItem>
-                            <NavLink to='/'><Button>Login</Button></NavLink>
-                        </NavItem>
-                    </Col>
+
+        <>
+
+            <Nav.Link>
+                <NavLink to="/">Signup</NavLink>
+            </Nav.Link>
+            <Nav.Link>
+                <NavLink to="/">Login</NavLink>
+            </Nav.Link>
 
 
-                </Row>
-            </Container>
-
-        </Nav>
-
+        </>
     )
 }
 
-export default SignedOutLinks;
+
+export default SignedOutLinks

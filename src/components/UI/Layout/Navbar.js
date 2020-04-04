@@ -1,24 +1,32 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavbarBrand, Container, Row, Col } from 'reactstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+
 import SignedInLinks from './SignedinLinks';
 import SignedOutLinks from './SignedoutLinks';
+
+
 const NavbarLayout = () => {
     return (
 
-        <Navbar color="dark" dark expand="md">
-            <Container>
-                <NavbarBrand color="light">
-                    <Link to="/">Drive Sales</Link>
-                </NavbarBrand>
+
+        <Navbar bg="dark" variant="light" fixed="top">
+            <Navbar.Brand>
+
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}>Drive Sales</Link>
+            </Navbar.Brand>
+
+            <Nav className="nav-links">
                 <SignedOutLinks />
                 <SignedInLinks />
 
-            </Container>
+            </Nav>
 
         </Navbar>
 
     )
 }
 
-export default NavbarLayout;
+
+export default NavbarLayout
