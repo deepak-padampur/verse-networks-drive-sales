@@ -7,6 +7,10 @@ import ContactList from '../contacts/ContactList';
 //connect dashboard component with the redux store
 import { connect } from 'react-redux';
 
+//Sync data to firestore
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+
 class Dashboard extends Component {
     render() {
         console.log(this.props);
@@ -34,10 +38,17 @@ class Dashboard extends Component {
 }
 //whi accessch property are added to the props of this component so that we can
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        contacts: state.contact.contacts
+        contacts: state.firestore.ordered.contacts
 
     }
 }
 
-export default connect(mapStateToProps)(Dashboard);
+// export default connect(mapStateToProps)(Dashboard);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([{
+        collection: 'contacts'
+    }])
+)(Dashboard)

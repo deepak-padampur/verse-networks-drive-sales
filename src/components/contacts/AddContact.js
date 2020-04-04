@@ -1,6 +1,7 @@
 //Add the contacts of persons
 import React, { Component } from 'react';
-
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { connect } from 'react-redux';
 import { createContact } from '../../store/actions/contactActions';
 import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap';
@@ -84,9 +85,21 @@ class AddPerson extends Component {
                                 </Form>
 
 
+
                             </Card.Body>
 
                         </Card>
+                    </Col>
+                    <Col md={6} sm={12} xs={12}>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Take a note</Card.Title>
+                                <CKEditor editor={ClassicEditor}></CKEditor><br />
+                                <Button variant="primary" style={{ marginRight: "10%" }}>Save</Button>
+                                <Button variant="primary">Cancel</Button>
+                            </Card.Body>
+                        </Card>
+
                     </Col>
                 </Row>
 
