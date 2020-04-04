@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Nav } from 'react-bootstrap'
+import { Nav, Button } from 'react-bootstrap'
 
 //output links
 const SignedInLinks = () => {
@@ -10,13 +10,13 @@ const SignedInLinks = () => {
         <>
 
             <Nav.Link>
-                <NavLink to="/">Add Person</NavLink>
+                <NavLink to="/add" style={{ textDecoration: "none" }}>Add Person</NavLink>
             </Nav.Link>
             <Nav.Link>
-                <NavLink to="/">Logout</NavLink>
+                <NavLink to="/" style={{ textDecoration: "none" }}>Logout</NavLink>
             </Nav.Link>
             <Nav.Link>
-                <NavLink to="/">Profile</NavLink>
+                <NavLink to="/"><Button style={{ borderRadius: "50%" }}> DD</Button></NavLink>
             </Nav.Link>
 
         </>

@@ -10,10 +10,10 @@ const SignedOutLinks = () => {
         <>
 
             <Nav.Link>
-                <NavLink to="/">Signup</NavLink>
+                <NavLink to="/signup" style={{ textDecoration: "none" }}>Signup</NavLink>
             </Nav.Link>
             <Nav.Link>
-                <NavLink to="/">Login</NavLink>
+                <NavLink to="/signin" style={{ textDecoration: "none" }}>Login</NavLink>
             </Nav.Link>
 
 

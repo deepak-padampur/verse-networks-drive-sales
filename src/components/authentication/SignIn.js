@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, Form,Button, Row, Col } from 'react-bootstrap';
+import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap';
 
 
 class SignIn extends Component {
@@ -27,7 +27,7 @@ class SignIn extends Component {
             <Container >
                 <Row className="justify-content-md-center">
 
-                    <Col md={4} sm={12} xs={12}>
+                    <Col md={6} sm={12} xs={12}>
                         <Card >
                             <Card.Header className="text-center">Sign In</Card.Header>
                             <Card.Body>
@@ -48,7 +48,7 @@ class SignIn extends Component {
                                         LOGIN
                                       </Button>
                                 </Form>
-                             
+
 
 
                             </Card.Body>

@@ -16,12 +16,13 @@ const NavbarLayout = () => {
 
                 <Link to="/" style={{ textDecoration: "none", color: "white" }}>Drive Sales</Link>
             </Navbar.Brand>
-
             <Nav className="nav-links">
                 <SignedOutLinks />
                 <SignedInLinks />
 
             </Nav>
+
+
 
         </Navbar>
 

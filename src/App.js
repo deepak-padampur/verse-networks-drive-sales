@@ -6,6 +6,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import ContactDetails from './components/contacts/ContactDetails';
 import SignIn from './components/authentication/SignIn';
 import SignUp from './components/authentication/SignUp';
+import AddPerson from './components/contacts/AddContact';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact/:id" component={ContactDetails} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/add" component={AddPerson} />
 
         </Switch>
       </div>
