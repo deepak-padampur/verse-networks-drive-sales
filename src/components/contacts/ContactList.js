@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Card } from 'react-bootstrap';
+
 import ContactSummary from './ContactSummary';
 import { Link } from 'react-router-dom';
 //Tabel can be made here
@@ -16,9 +16,11 @@ const ContactList = ({ contacts }) => {
             {/* map through the contacts details */}
             {contacts && contacts.map(contact => {
                 return (
-                    <Link to={'/contact/' + contact.id}>
+
+                    <Link to={'/contact/' + contact.id} style={{ textDecoration: "none" }}>
                         <ContactSummary contact={contact} key={contact.id} />
                     </Link>
+
                 )
 
             })}

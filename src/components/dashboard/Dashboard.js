@@ -19,14 +19,15 @@ class Dashboard extends Component {
             <Container className="dashboard">
 
                 <Row>
-                    <Col xs={8} sm={8}>
+                    <Col xs={10} sm={10}>
 
                         <ContactList contacts={contacts} />
 
 
 
+
                     </Col>
-                    <Col xs={4} sm={4}>
+                    <Col xs={2} sm={2}>
                         <Notifications />
                     </Col>
 
