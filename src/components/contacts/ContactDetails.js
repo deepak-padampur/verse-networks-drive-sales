@@ -19,15 +19,15 @@ const ContactDetails = (props) => {
     const { contact } = props;
     const [value, setValue] = useState("");
     const [date, setDate] = useState(new Date());
+    // const [selectedDate, setSelectedDate] = useState(new Date());
 
     const handleOnChange = (event, editor) => {
         console.log(editor.getData());
         const data = editor.getData();
         setValue(data);
     }
-    const handleDateChange = (event, date) => {
-        const data = { date };
-        setValue(data);
+    const handleDateChange = (date) => {
+        setDate(date);
     }
     if (contact) {
         return (<Container>
@@ -46,6 +46,7 @@ const ContactDetails = (props) => {
                 <Card.Footer className="text-muted">
                     <h3>Notes being saved:</h3>
                     <div>{ReactHtmlParser(value)}</div>
+
                     <p>organization:{contact.organization}</p>
                     <p>saved followup date from the calender</p><br />
 
