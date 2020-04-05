@@ -5,8 +5,9 @@ import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 //for parsing the editor data
 import ReactHtmlParser from 'react-html-parser';
-//Side nav with the full info of the person
+//date picker
 
+import DateTimePicker from 'react-datetime-picker';
 
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -17,10 +18,15 @@ const ContactDetails = (props) => {
     // const id = props.match.params.id;
     const { contact } = props;
     const [value, setValue] = useState("");
+    const [date, setDate] = useState(new Date());
 
     const handleOnChange = (event, editor) => {
         console.log(editor.getData());
         const data = editor.getData();
+        setValue(data);
+    }
+    const handleDateChange = (event, date) => {
+        const data = { date };
         setValue(data);
     }
     if (contact) {
@@ -33,6 +39,7 @@ const ContactDetails = (props) => {
                     <Card.Title>Take a note</Card.Title>
                     <CKEditor editor={ClassicEditor} onChange={handleOnChange} /><br />
                     <Card.Title>Follow Up Date</Card.Title>
+                    <DateTimePicker onChange={handleDateChange} value={date} /><br /><br />
                     <Button variant="primary" style={{ marginRight: "10%" }}>Save</Button>
                     <Button variant="primary">Cancel</Button>
                 </Card.Body>
