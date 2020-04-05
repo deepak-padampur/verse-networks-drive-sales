@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 //The Editor goes here
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+//for parsing the editor data
+import ReactHtmlParser from 'react-html-parser';
 //Side nav with the full info of the person
 
 
@@ -14,23 +16,32 @@ const ContactDetails = (props) => {
     // console.log(props);
     // const id = props.match.params.id;
     const { contact } = props;
+    const [value, setValue] = useState("");
+
+    const handleOnChange = (event, editor) => {
+        console.log(editor.getData());
+        const data = editor.getData();
+        setValue(data);
+    }
     if (contact) {
         return (<Container>
 
 
-            <Card className="text-center">
-                <Card.Header>Person Name-{contact.name}</Card.Header>
-                <Card.Body>
+            <Card >
+                <Card.Header className="text-center">Person Name-{contact.name}</Card.Header>
+                <Card.Body className="text-center">
                     <Card.Title>Take a note</Card.Title>
-                    <CKEditor editor={ClassicEditor}></CKEditor><br />
+                    <CKEditor editor={ClassicEditor} onChange={handleOnChange} /><br />
                     <Card.Title>Follow Up Date</Card.Title>
                     <Button variant="primary" style={{ marginRight: "10%" }}>Save</Button>
                     <Button variant="primary">Cancel</Button>
                 </Card.Body>
                 <Card.Footer className="text-muted">
+                    <h3>Notes being saved:</h3>
+                    <div>{ReactHtmlParser(value)}</div>
                     <p>organization:{contact.organization}</p>
                     <p>saved followup date from the calender</p><br />
-                    <p>By Deepak</p>
+
 
 
                 </Card.Footer>
