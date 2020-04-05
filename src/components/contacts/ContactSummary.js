@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { Card } from 'react-bootstrap';
+//format date
+import moment from 'moment';
+//This must be a table row
 const ContactSummary = ({ contact }) => {
     return (
         <>
@@ -17,7 +20,7 @@ const ContactSummary = ({ contact }) => {
                 </Card.Body>
                 <Card.Footer>
 
-                    <small className="text-muted">Last updated 3 mins ago</small>
+                    <small className="text-muted">{moment(contact.createdAt.toDate()).calendar()}</small>
                 </Card.Footer>
             </Card>
             <br />

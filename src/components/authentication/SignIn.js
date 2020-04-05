@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap';
-
+import { Container, Card, Form, Button, Row, Col, Alert } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { signIn } from '../../store/actions/authActions';
 
 class SignIn extends Component {
     state = {
@@ -19,17 +20,20 @@ class SignIn extends Component {
 
         e.preventDefault();
         console.log(this.state);
+        this.props.signIn(this.state);
 
 
     }
     render() {
+        const { authError } = this.props;
         return (
             <Container >
                 <Row className="justify-content-md-center">
 
                     <Col md={6} sm={12} xs={12}>
                         <Card >
-                            <Card.Header className="text-center">Sign In</Card.Header>
+                            <Card.Header className="text-center">Sign In</Card.Header><br />
+                            {authError ? <Alert variant="danger" className="text-center">{authError}</Alert> : null}
                             <Card.Body>
                                 <Form onSubmit={this.handleSubmit}>
 
@@ -47,6 +51,7 @@ class SignIn extends Component {
                                     <Button variant="primary" type="submit" >
                                         LOGIN
                                       </Button>
+
                                 </Form>
 
 
@@ -62,4 +67,17 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    //attach props to the component
+    return {
+        signIn: (creds) => dispatch(signIn(creds))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

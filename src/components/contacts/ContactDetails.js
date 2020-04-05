@@ -23,6 +23,7 @@ const ContactDetails = (props) => {
                 <Card.Body>
                     <Card.Title>Take a note</Card.Title>
                     <CKEditor editor={ClassicEditor}></CKEditor><br />
+                    <Card.Title>Follow Up Date</Card.Title>
                     <Button variant="primary" style={{ marginRight: "10%" }}>Save</Button>
                     <Button variant="primary">Cancel</Button>
                 </Card.Body>

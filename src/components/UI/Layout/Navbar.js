@@ -6,6 +6,8 @@ import { Navbar, Nav } from 'react-bootstrap';
 import SignedInLinks from './SignedinLinks';
 import SignedOutLinks from './SignedoutLinks';
 
+import { connect } from 'react-redux';
+
 
 const NavbarLayout = () => {
     return (
@@ -29,5 +31,10 @@ const NavbarLayout = () => {
     )
 }
 
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
 
-export default NavbarLayout
+    }
+}
+export default connect(mapStateToProps)(NavbarLayout)
